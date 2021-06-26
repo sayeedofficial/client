@@ -11,7 +11,9 @@ function App() {
 
 	useEffect(
 		() => {
-			socketRef.current = io.connect("http://localhost:9900")
+			socketRef.current = io.connect(
+        "https://chatchatchatserrver.herokuapp.com/"
+      );
 			socketRef.current.on("message", ({ name, message }) => {
 				setChat([ ...chat, { name, message } ])
 			})
